@@ -1,0 +1,1 @@
+# apartment_renting_django_project
