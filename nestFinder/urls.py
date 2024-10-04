@@ -19,5 +19,6 @@ from django.urls import path
 from accounts import views as acc_views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', acc_views.login, name='login')
+    path('login/', acc_views.login, name='login'),
+    path('signup/', acc_views.signup, name='signup')
 ]
