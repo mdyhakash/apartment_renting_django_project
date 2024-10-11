@@ -40,16 +40,8 @@ INSTALLED_APPS = [
 ]
 
 MY_APPS =[
-    'accounts', #Handles user authentication,roles (tenant,landlord,admin)
-    'admin_panel', #Admin dashboard for managing users,listings,reports
-    'landlords',  #Features for landlords like listings,tenant management
-    'listings', #Handles property listings,details,uploading media
-    'maintenance', #Handles maintenance requests,tracking,landlord responses
-    'payment', #Handles rent payments,payment history,payment gateways
-    'reviews', #Handles reviews and ratings for landlords and properties
-    'search', #Handles search functionality and filtering
-    'tenants', #Features for tenants like applications,dashboards,payments
-    
+    'accounts',
+    'property',    
 ]
 INSTALLED_APPS = INSTALLED_APPS + MY_APPS
 
