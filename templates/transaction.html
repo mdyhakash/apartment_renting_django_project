@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>transaction Table</h1>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Property</th>
+        <th scope="col">Transaction Method</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Transaction Date</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for t in transaction %}
+      <tr>
+        <td>{{t.user}}</td>
+        <td>{{t.property}}</td>
+        <td>{{t.transaction_type}}</td>
+        <td>{{t.amount}}</td>
+        <td>{{t.transaction_date}}</td>
+        <td>{{t.status}}</td>
+      </tr>
+      {% endfor%}
+    </tbody>
+  </table>
+{% endblock %}

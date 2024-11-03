@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Booking Table</h1>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Property</th>
+        <th scope="col">Booking Date</th>
+        <th scope="col">Booked At</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for b in booking %}
+      <tr>
+        <td>{{b.user}}</td>
+        <td>{{b.property}}</td>
+        <td>{{b.booking_date}}</td>
+        <td>{{b.date_created}}</td>
+      </tr>
+      {% endfor%}
+    </tbody>
+  </table>
+{% endblock %}

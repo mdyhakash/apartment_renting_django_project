@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>User Table</h1>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">User Type</th>
+        <th scope="col">Join Date</th>
+        <th scope="col">Profile Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for u in user%}
+      <tr>
+        <td>{{u.username}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.phone}}</td>
+        <td>{{u.user_type}}</td>
+        <td>{{u.date_of_joindes}}</td>
+        <td>{{u.profile_image}}</td>
+      </tr>
+      {% endfor%}
+    </tbody>
+  </table>
+{% endblock %}
