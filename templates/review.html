@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Review Table</h1>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Property</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Date of Review</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for r in review %}
+      <tr>
+        <td>{{r.user}}</td>
+        <td>{{r.property}}</td>
+        <td>{{r.rating}}</td>
+        <td>{{r.review_text}}</td>
+        <td>{{r.date_reviewed}}</td>
+      </tr>
+      {% endfor%}
+    </tbody>
+  </table>
+{% endblock %}
