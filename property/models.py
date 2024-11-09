@@ -7,11 +7,14 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=15, null=True, blank=True)
     user_type = models.CharField(max_length=50)
-    date_of_joindes=models.DateField()
+    date_of_joined=models.DateField()
     profile_image = models.ImageField(upload_to='profiles/', null=True, blank=True)
 
+    def __str__(self):
+        return self.username
 
 class Property(models.Model):
+    p_id=models.CharField(max_length=10,blank=True)
     property_type = models.CharField(max_length=100)
     location = models.CharField(max_length=255)
     description = models.TextField()
@@ -28,7 +31,9 @@ class Property(models.Model):
     image_5 = models.ImageField(upload_to='property_images/', null=True, blank=True)
     image_6 = models.ImageField(upload_to='property_images/', null=True, blank=True)
     image_7 = models.ImageField(upload_to='property_images/', null=True, blank=True)
-
+     
+    def __str__(self):
+        return self.property_type
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -44,7 +49,9 @@ class Transaction(models.Model):
     amount = models.FloatField()
     transaction_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=50)
-
+    
+    def __str__(self):
+        return self.transaction_type
 
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

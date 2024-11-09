@@ -5,4 +5,15 @@ from .models import *
 def home(request):
     return render(request, template_name="home.html")
 def apartment(request):
-    return render(request, template_name="apartment.html")
+    apartment=Property.objects.all()
+    context={
+         'apartment':apartment
+     }
+    return render(request, template_name="apartment.html",context=context)
+def propertydetails(request,p_id):
+     propertys=Property.objects.get(pk=p_id)
+     context={
+         'propertys':propertys
+     }
+     return render(request,template_name="propertydetails.html",context=context)
+
